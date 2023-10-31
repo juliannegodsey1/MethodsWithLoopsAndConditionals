@@ -2,7 +2,7 @@
 
 namespace MethodsWithLoopsAndConditionals
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -12,7 +12,18 @@ namespace MethodsWithLoopsAndConditionals
             IsNumEven(9);
             PosOrNeg(-10);
             IsOldEnough();
-            Range();
+
+            bool isInRange = Range();
+            if (isInRange)
+            {
+                Console.WriteLine("The number is in the range.");
+            }
+            else
+            {
+                Console.WriteLine("The number is not in the range.");
+            }
+
+            Console.WriteLine("Goodbye!");
 
         
 
@@ -80,10 +91,18 @@ namespace MethodsWithLoopsAndConditionals
 
         public static bool Range()
         {
+            Console.WriteLine("Enter a number to see if it is in range:");
             int numGiven = int.Parse(Console.ReadLine());
 
-            var inRange = (numGiven <= 10 && numGiven >= -10) ? true : false;
-            return inRange;
+            if (numGiven <= 10 && numGiven >= -10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
         
 
